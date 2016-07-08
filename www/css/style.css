@@ -28,3 +28,8 @@
 .productCard:nth-child(odd) {
   background: #7BA9D0;
 }
+
+#inventorySearch {
+  text-align: center;
+  margin: 0 auto;
+}
