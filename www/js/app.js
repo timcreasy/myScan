@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic','ngCordova', 'firebase'])
+var myScan = angular.module('myScan', ['ionic','ngCordova', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -9,63 +9,4 @@ angular.module('starter', ['ionic','ngCordova', 'firebase'])
       StatusBar.styleDefault();
     }
   });
-})
-
-// .config(function($stateProvider, $urlRouterProvider){
-//   $stateProvider
-//   .state('home',{
-//     url:'/home',
-//     templateUrl: 'views/home.html',
-//     controller: 'HomeCtrl'
-//   });
-//   $urlRouterProvider.otherwise('/home');
-// })
-
-.config(function($stateProvider, $urlRouterProvider){
-  $stateProvider
-  .state('index',{
-    url:'/',
-    templateUrl: 'views/home.html',
-    controller: 'HomeCtrl'
-  })
-  .state('products', {
-  url: '/products',
-  templateUrl: 'views/products.html',
-  controller: 'ProductsCtrl'
-  });
-  $urlRouterProvider.otherwise('/');
-})
-
-// .config(function($stateProvider, $urlRouterProvider){
-//   $stateProvider
-//   .state('/',{
-//     url:'/',
-//     templateUrl: 'index.html',
-//     controller: 'HomeCtrl'
-//   });
-//   $urlRouterProvider.otherwise('/');
-// })
-
-.controller('ProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform',
-   function($scope,$firebaseArray,$ionicPlatform) {
-
-     var ref = firebase.database().ref().child("inventory");
-     $scope.inventory = $firebaseArray(ref);
-
-   }
-])
-
-.controller('HomeCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform',function($scope,$cordovaBarcodeScanner,$ionicPlatform) {
-
-  $scope.scan = function(){
-    console.log("HELLO");
-    $ionicPlatform.ready(function() {
-      $cordovaBarcodeScanner.scan().then(function(barcodeData) {
-          alert(JSON.stringify(barcodeData));
-      }, function(error) {
-          alert(JSON.stringify(error));
-      });
-    });
-  }
-
-}]);
+});
