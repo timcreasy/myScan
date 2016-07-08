@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic','ngCordova'])
+angular.module('starter', ['ionic','ngCordova', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -46,8 +46,12 @@ angular.module('starter', ['ionic','ngCordova'])
 //   $urlRouterProvider.otherwise('/');
 // })
 
-.controller('ProductsCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform',
-   function($scope,$cordovaBarcodeScanner,$ionicPlatform) {
+.controller('ProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform',
+   function($scope,$firebaseArray,$ionicPlatform) {
+
+     var ref = firebase.database().ref().child("inventory");
+     $scope.inventory = $firebaseArray(ref);
+
    }
 ])
 

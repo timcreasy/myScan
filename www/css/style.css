@@ -15,3 +15,16 @@
   color:white;
   text-decoration: none;
 }
+
+#productsHeader {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.productCard {
+  text-align: center;
+}
+
+.productCard:nth-child(odd) {
+  background: #7BA9D0;
+}
