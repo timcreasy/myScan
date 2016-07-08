@@ -27,6 +27,11 @@ angular.module('starter', ['ionic','ngCordova'])
     url:'/',
     templateUrl: 'views/home.html',
     controller: 'HomeCtrl'
+  })
+  .state('products', {
+  url: '/products',
+  templateUrl: 'views/products.html',
+  controller: 'ProductsCtrl'
   });
   $urlRouterProvider.otherwise('/');
 })
@@ -40,6 +45,11 @@ angular.module('starter', ['ionic','ngCordova'])
 //   });
 //   $urlRouterProvider.otherwise('/');
 // })
+
+.controller('ProductsCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform',
+   function($scope,$cordovaBarcodeScanner,$ionicPlatform) {
+   }
+])
 
 .controller('HomeCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform',function($scope,$cordovaBarcodeScanner,$ionicPlatform) {
 
