@@ -1,14 +1,16 @@
 <ion-view view-title="Home">
-  <ion-content>
+  <ion-content class="center">
 
-        <div id="scanButton" ng-click='scan()'>
-          Click Here to Scan
-        </div>
+        <a id="scanButton" ng-click='scan()'>
+          <button class="button button-dark">
+            Scan
+          </button>
+        </a>
 
-        <a href="#/products">
-          <div id="productsButton">
+        <a id="productsButton" href="#/products">
+          <button class="button button-dark">
             View Products
-          </div>
+          </button>
         </a>
 
 
