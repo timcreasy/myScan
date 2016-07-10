@@ -43,3 +43,7 @@
     -ms-flex-align: center;
     align-items: center;
 }
+
+.homeButtons {
+  width: 100%;
+}
