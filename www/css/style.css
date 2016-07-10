@@ -43,21 +43,3 @@
     -ms-flex-align: center;
     align-items: center;
 }
-
-#productsHeader {
-  text-align: center;
-  padding-top: 25px;
-}
-
-.productCard {
-  text-align: center;
-}
-
-.productCard:nth-child(odd) {
-  background: #7BA9D0;
-}
-
-#inventorySearch {
-  text-align: center;
-  margin: 0 auto;
-}
