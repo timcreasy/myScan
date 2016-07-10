@@ -57,7 +57,7 @@ myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform',
             var currentProduct = inventoryData[product];
 
             // Set title to be 'Update Product'
-            $ionicNavBarDelegate.title('Update Product');
+            // $ionicNavBarDelegate.title('Update Product');
 
             // Set button to be 'Update'
             document.getElementById('productButton').innerText = "Update";
@@ -74,7 +74,7 @@ myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform',
           } else {
 
             // Set title to be 'Add Product'
-            $ionicNavBarDelegate.title('Add Product');
+            // $ionicNavBarDelegate.title('Add Product');
 
             // Set button to be 'Add'
             document.getElementById('productButton').innerText = "Add";
