@@ -8,14 +8,6 @@ myScan.controller('HomeCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform
 
           // If barcode is not empty and was not cancelled
           if (barcodeData.text !== "" && barcodeData.cancelled !== 1) {
-            // $ionicPopup.show({
-            //   title: "Barcode Found",
-            //   template: JSON.stringify(barcodeData),
-            //   buttons: [{
-            //     text: 'Dismiss',
-            //     type: 'button-default'
-            //   }]
-            // });
 
             // Set productToAdd
             productService.setProductToAdd(barcodeData.text);

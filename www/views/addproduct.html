@@ -1,4 +1,7 @@
-<ion-view view-title="Add Product">
+<!-- <ion-view view-title="Add Product"> -->
+<ion-view cache-view="false">
+  <!-- <ion-nav-title>
+  </ion-nav-title> -->
   <ion-content>
 
     <div class="list">
@@ -18,8 +21,8 @@
 
     <div class="center">
       <a id="addProductButton" ng-click='addProductPressed()'>
-        <button class="button button-dark">
-          Add Product
+        <button class="button button-dark" id="productButton">
+          {{productButtonText}}
         </button>
       </a>
     </div>
