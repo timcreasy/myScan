@@ -1,8 +1,11 @@
 myScan.controller('ProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform',
    function($scope,$firebaseArray,$ionicPlatform) {
 
-     var ref = firebase.database().ref().child("inventory");
-     $scope.inventory = $firebaseArray(ref);
+     // Get reference to Firebase inventory
+     var inventoryRef = new Firebase("https://myscan.firebaseio.com/inventory");
+
+     // Set inventory equal to data in firebase
+     $scope.inventory = $firebaseArray(inventoryRef);
 
    }
 ]);

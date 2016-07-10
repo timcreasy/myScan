@@ -1,18 +1,22 @@
-<ion-view>
+<ion-view view-title="Products">
   <ion-content>
 
-    <h1 id="productsHeader">Products View</h1>
-
-    <input type="text" id="inventorySearch" placeholder="Search inventory" ng-model="queryInventory">
-
-    <div class="productCard" ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
-      <p class="productName">Product Name: {{product.productName}}</p>
-      <p class="productUnits">Number of units: {{product.quantity}}</p>
-      <p class="productBarcode">Product barcode: {{product.barcode}}</p>
+    <!-- Search products input form -->
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search products" ng-model="queryInventory">
+      </label>
     </div>
 
-<!-- <p>{{inventory}}</p> -->
-
+      <!-- Products list -->
+      <ul class="list" >
+        <li class="item" ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
+          <b>Product: </b>{{product.productName}}<br>
+          <b>Quantity: </b>{{product.quantity}}<br>
+          <b>Barcode: </b>{{product.barcode}}<br>
+        </li>
+      </ul>
 
   </ion-content>
 </ion-view>

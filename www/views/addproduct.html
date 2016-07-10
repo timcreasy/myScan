@@ -1,0 +1,28 @@
+<ion-view view-title="Add Product">
+  <ion-content>
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Product Name</span>
+        <input id="productName" type="text" placeholder="Eg. Snack Crackers">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Quantity</span>
+        <input id="productQuantity" type="tel" placeholder="Eg. 83">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Barcode</span>
+        <input id="barcodeInput" type="text" disabled>
+      </label>
+    </div>
+
+    <div class="center">
+      <a id="addProductButton" ng-click='addProductPressed()'>
+        <button class="button button-dark">
+          Add Product
+        </button>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>
