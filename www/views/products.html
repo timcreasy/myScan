@@ -9,14 +9,25 @@
       </label>
     </div>
 
-      <!-- Products list -->
-      <ul class="list" >
-        <li class="item" ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
-          <b>Product: </b>{{product.productName}}<br>
-          <b>Quantity: </b>{{product.quantity}}<br>
-          <b>Barcode: </b>{{product.barcode}}<br>
-        </li>
-      </ul>
+    <div class="list">
+      <div class="item item-thumbnail-left" ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
+        <img src="{{product.image}}">
+        <h2>{{product.productName}}</h2>
+        <p>Quantity: {{product.quantity}}</p>
+        <p>Barcode: {{product.barcode}}</p>
+      </div>
+    </div>
+
+    <!-- <div class="list">
+      <div class="item item-thumbnail-left" ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
+        <div ng-click='productClicked(product)'>
+          <img src="{{product.image}}">
+          <h2>{{product.productName}}</h2>
+          <p>Quantity: {{product.quantity}}</p>
+          <p>Barcode: {{product.barcode}}</p>
+        </div>
+      </div>
+    </div> -->
 
   </ion-content>
 </ion-view>

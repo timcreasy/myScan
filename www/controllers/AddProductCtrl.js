@@ -1,24 +1,7 @@
-myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform', 'productService', '$ionicNavBarDelegate', '$state',
-   function($scope, $firebaseArray, $ionicPlatform, productService, $ionicNavBarDelegate, $state) {
+myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform', 'productService', '$ionicNavBarDelegate', '$state', 'amazonService', '$q', '$rootScope',
+   function($scope, $firebaseArray, $ionicPlatform, productService, $ionicNavBarDelegate, $state, amazonService, $q, $rootScope) {
 
-    // // Get reference to inventory in firebase
-    // var inventoryRef = new Firebase("https://myscan.firebaseio.com/inventory");
-    //
-    //  // Get barcode to add product information to
-    //  var barcode = productService.getProductToAdd();
-    //
-    // // Set input field to barcode
-    // document.getElementById('barcodeInput').value = barcode;
-    //
-    // $scope.addProductPressed = function() {
-    //
-    //  var productName = document.getElementById('productName').value;
-    //  var productQuantity = document.getElementById('productQuantity').value;
-    //  inventoryRef.push({ 'productName': productName, 'quantity': productQuantity, 'barcode': barcode });
-    //
-    // };
-
-    // $scope.productTitle = "Add Product";
+    $rootScope.productToUpdate;
 
     // Variable to track if productExists, initially set to false
     var productExists = false;
@@ -34,6 +17,11 @@ myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform',
 
      // Set input field to barcode
      document.getElementById('barcodeInput').value = barcode;
+
+     // Set product image to be scanned product
+     var productImage = productService.getProductImage();
+     $("#productImage").attr('src', productImage);
+
 
      // Get current inventory in firebase
      inventoryRef.once('value').then(function(inventorySnapshot) {
@@ -56,20 +44,17 @@ myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform',
             // Set match to be currentProduct
             var currentProduct = inventoryData[product];
 
-            // Set title to be 'Update Product'
-            // $ionicNavBarDelegate.title('Update Product');
-
             // Set button to be 'Update'
             document.getElementById('productButton').innerText = "Update";
 
-            // Set productName field to be equal to currentProduct name
-            document.getElementById('productName').value = currentProduct.productName;
-
-            // Set productName field to be equal to currentProduct name
-            document.getElementById('productName').value = currentProduct.productName;
-
-            // Set productQuantity field to be equal to currentProduct quantity
-            document.getElementById('productQuantity').value = currentProduct.quantity;
+            // // Set productName field to be equal to currentProduct name
+            // document.getElementById('productName').value = currentProduct.productName;
+            //
+            // // Set productName field to be equal to currentProduct name
+            // document.getElementById('productName').value = currentProduct.productName;
+            //
+            // // Set productQuantity field to be equal to currentProduct quantity
+            // document.getElementById('productQuantity').value = currentProduct.quantity;
 
           } else {
 
@@ -102,7 +87,15 @@ myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform',
         } else if (!productExists) {
 
           // Add new product based on new input
-          inventoryRef.push({ 'productName': productName, 'quantity': productQuantity, 'barcode': productBarcode });
+          // inventoryRef.push({ 'productName': productName, 'quantity': productQuantity, 'barcode': productBarcode });
+
+          amazonService.getItemInfo(productBarcode).then(function(itemData) {
+            itemData = $.parseXML(itemData);
+            var itemImage = itemData.getElementsByTagName("Item")[0].children[4].getElementsByTagName('URL')[0].textContent;
+
+            inventoryRef.push({ 'productName': productName, 'quantity': productQuantity, 'barcode': productBarcode, 'image': itemImage });
+          });
+
 
         }
 

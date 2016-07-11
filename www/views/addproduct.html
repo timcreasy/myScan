@@ -5,15 +5,15 @@
     <div class="list">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Product Name</span>
-        <input id="productName" type="text" placeholder="Eg. Snack Crackers">
+        <input id="productName" type="text" placeholder="Eg. Snack Crackers" value="{{productToUpdate.productName}}" ng-model="nameInput">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Quantity</span>
-        <input id="productQuantity" type="tel" placeholder="Eg. 83">
+        <input id="productQuantity" type="tel" placeholder="Eg. 83" value="{{productToUpdate.quantity}}>
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Barcode</span>
-        <input id="barcodeInput" type="text" disabled>
+        <input id="barcodeInput" type="text" disabled value="{{productToUpdate.barcode}}>
       </label>
     </div>
 
@@ -23,6 +23,10 @@
           {{productButtonText}}
         </button>
       </a>
+    </div>
+
+    <div id="imageOutput">
+      <img id="productImage" src="">
     </div>
 
   </ion-content>

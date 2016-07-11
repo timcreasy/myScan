@@ -1,15 +1,7 @@
 myScan.service('productService', function() {
-  // var productList = [];
 
   var productToAdd = null;
-
-  // var addProduct = function(newObj) {
-  //     productList.push(newObj);
-  // };
-  //
-  // var getProducts = function(){
-  //     return productList;
-  // };
+  var productImage = null;
 
   var setProductToAdd = function(productBarcode) {
     productToAdd = productBarcode;
@@ -19,9 +11,19 @@ myScan.service('productService', function() {
     return productToAdd;
   };
 
+  var setProductImage = function(image) {
+    productImage = image;
+  };
+
+  var getProductImage = function() {
+    return productImage;
+  };
+
   return {
     setProductToAdd: setProductToAdd,
-    getProductToAdd: getProductToAdd
+    getProductToAdd: getProductToAdd,
+    setProductImage: setProductImage,
+    getProductImage: getProductImage
   };
 
 });

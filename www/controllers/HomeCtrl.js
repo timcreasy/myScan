@@ -1,5 +1,5 @@
-myScan.controller('HomeCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform', '$ionicPopup', 'productService', '$state',
-  function($scope,$cordovaBarcodeScanner,$ionicPlatform, $ionicPopup, productService, $state) {
+myScan.controller('HomeCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform', '$ionicPopup', 'productService', '$state', 'amazonService',
+  function($scope,$cordovaBarcodeScanner,$ionicPlatform, $ionicPopup, productService, $state, amazonService) {
 
   // Barcode scanning utility function
   $scope.scan = function(){
@@ -12,8 +12,16 @@ myScan.controller('HomeCtrl', ['$scope','$cordovaBarcodeScanner','$ionicPlatform
             // Set productToAdd
             productService.setProductToAdd(barcodeData.text);
 
-            // Go to addproduct
-            $state.go('addproduct');
+            amazonService.getItemInfo(barcodeData.text).then(function(itemData) {
+
+              // Get item info
+              itemData = $.parseXML(itemData);
+              var itemImage = itemData.getElementsByTagName("Item")[0].children[6].getElementsByTagName('URL')[0].textContent;
+              productService.setProductImage(itemImage);
+
+              // Go to addproduct
+              $state.go('addproduct');
+            });
 
           }
 

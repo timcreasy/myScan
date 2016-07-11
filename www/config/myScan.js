@@ -8,7 +8,7 @@ myScan.config(function($stateProvider, $urlRouterProvider){
   .state('home', {
     url: '/home',
     templateUrl: 'views/home.html',
-    controller: 'HomeCtrl'
+    controller: 'HomeCtrl',
   }).state('products', {
     url: '/products',
     templateUrl: 'views/products.html',

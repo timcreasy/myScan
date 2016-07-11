@@ -3,7 +3,11 @@
   "version": "1.1.1",
   "description": "An Ionic project",
   "dependencies": {
+    "amz-products": "0.0.3",
     "angularfire": "^2.0.1",
+    "aws-lib": "^0.3.0",
+    "aws-sign-web": "^1.1.1",
+    "browserify": "^13.0.1",
     "firebase": "^3.1.0",
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
