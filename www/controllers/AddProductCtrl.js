@@ -1,9 +1,9 @@
-myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform', 'productService', '$ionicNavBarDelegate', '$state', '$q', '$rootScope',
-   function($scope, $firebaseArray, $ionicPlatform, productService, $ionicNavBarDelegate, $state, $q, $rootScope) {
+myScan.controller('AddProductCtrl', ['$scope','$firebaseArray','$ionicPlatform', 'productService', '$ionicNavBarDelegate', '$state', '$q', '$rootScope', 'firebaseReference',
+   function($scope, $firebaseArray, $ionicPlatform, productService, $ionicNavBarDelegate, $state, $q, $rootScope, firebaseReference) {
 
 
      // Get reference to inventory in firebase
-     var inventoryRef = new Firebase("https://myscan.firebaseio.com/inventory");
+     var inventoryRef = firebaseReference.child("inventory");
 
       // Get barcode to add product information to
      var product = $rootScope.productToUpdate;

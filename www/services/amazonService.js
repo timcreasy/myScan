@@ -29,6 +29,7 @@ function getAmazonQueryString(item) {
   var PublicKey = "YOUR_PUBLIC_KEY";
   var AssociateTag = "YOUR_ASSOCIATE_TAG";
 
+
   // Parameters for request
   var parameters = [];
   parameters.push("AWSAccessKeyId=" + PublicKey);

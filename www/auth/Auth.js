@@ -1,5 +1,5 @@
-myScan.service("Auth", function($ionicPopup, $firebaseAuth, $state) {
-  var ref = new Firebase("https://myscan.firebaseio.com/");
+myScan.service("Auth", function($ionicPopup, $firebaseAuth, $state, firebaseReference) {
+  var ref = firebaseReference;
 
   this.loginUser = function(userName, userPassword) {
     ref.authWithPassword({
