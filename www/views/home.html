@@ -1,21 +1,19 @@
 <ion-view view-title="myScan">
   <ion-content class="center">
+      <img src="./img/barcode.png" id="scanImage">
 
-    <!-- <img src="/img/barcode.png" id="scanImage"> -->
+      <a id="scanButton" ng-click='scan()'>
+        <button class="button button-dark homeButtons">
+          Scan
+        </button>
+      </a>
 
-    <a id="scanButton" ng-click='scan()'>
-      <button class="button button-dark homeButtons">
-        Scan
-      </button>
-    </a>
+      <img src="./img/list.png" id="listImage">
 
-    <!-- <img src="/img/list.png" id="listImage"> -->
-
-    <a id="productsButton" href="#/viewproducts">
-      <button class="button button-dark homeButtons">
-        View Products
-      </button>
-    </a>
-
+      <a id="productsButton" href="#/viewproducts">
+        <button class="button button-dark homeButtons">
+          View Products
+        </button>
+      </a>
   </ion-content>
 </ion-view>

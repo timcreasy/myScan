@@ -3,15 +3,13 @@
         <a class="button icon-left ion-chevron-left button-clear button-dark homeButton" href="#/home">Home</a>
         <!-- <button class="button icon-left ion-home">Home</button> -->
     </ion-nav-buttons>
+    <ion-header-bar class="bar-light bar-subheader">
+        <label class="item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search products" ng-model="queryInventory">
+        </label>
+    </ion-header-bar>
   <ion-content>
-
-    <!-- Search products input form -->
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search products" ng-model="queryInventory">
-      </label>
-    </div>
 
     <div class="list">
       <div ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
