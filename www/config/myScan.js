@@ -9,14 +9,18 @@ myScan.config(function($stateProvider, $urlRouterProvider){
     url: '/home',
     templateUrl: 'views/home.html',
     controller: 'HomeCtrl',
-  }).state('products', {
-    url: '/products',
-    templateUrl: 'views/products.html',
-    controller: 'ProductsCtrl'
+  }).state('viewproducts', {
+    url: '/viewproducts',
+    templateUrl: 'views/viewproducts.html',
+    controller: 'ViewProductsCtrl'
   }).state('addproduct', {
     url: '/addproduct',
     templateUrl: 'views/addproduct.html',
     controller: 'AddProductCtrl'
+  }).state('updateproduct', {
+    url: '/updateproduct',
+    templateUrl: 'views/updateproduct.html',
+    controller: 'UpdateProductCtrl'
   });
   $urlRouterProvider.otherwise('/');
 });

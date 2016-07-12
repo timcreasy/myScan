@@ -1,4 +1,8 @@
 <ion-view view-title="Products">
+  <ion-nav-buttons side="left">
+        <a class="button icon-left ion-chevron-left button-clear button-dark" href="#/home" id="homeButton">Home</a>
+        <!-- <button class="button icon-left ion-home">Home</button> -->
+    </ion-nav-buttons>
   <ion-content>
 
     <!-- Search products input form -->
@@ -10,24 +14,15 @@
     </div>
 
     <div class="list">
-      <div class="item item-thumbnail-left" ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
-        <img src="{{product.image}}">
-        <h2>{{product.productName}}</h2>
-        <p>Quantity: {{product.quantity}}</p>
-        <p>Barcode: {{product.barcode}}</p>
-      </div>
-    </div>
-
-    <!-- <div class="list">
-      <div class="item item-thumbnail-left" ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
-        <div ng-click='productClicked(product)'>
+      <div ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
+        <div ng-click='productClicked(product)' class="item item-thumbnail-left">
           <img src="{{product.image}}">
           <h2>{{product.productName}}</h2>
           <p>Quantity: {{product.quantity}}</p>
           <p>Barcode: {{product.barcode}}</p>
         </div>
       </div>
-    </div> -->
+    </div>
 
   </ion-content>
 </ion-view>

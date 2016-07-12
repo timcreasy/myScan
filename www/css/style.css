@@ -13,6 +13,35 @@
   text-decoration: none;
 }
 
+#homeButton {
+  font-weight: 500;
+}
+
+#scanButton {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+#scanImage {
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+#listImage {
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+#productsButton {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+
 .center{
   display: -webkit-box;
     display: -moz-box;

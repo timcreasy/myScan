@@ -1,4 +1,4 @@
-myScan.controller('ProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform', '$rootScope', '$state', 'productService',
+myScan.controller('ViewProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform', '$rootScope', '$state', 'productService',
    function($scope,$firebaseArray,$ionicPlatform, $rootScope, $state, productService) {
 
      // Get reference to Firebase inventory
@@ -14,6 +14,7 @@ myScan.controller('ProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform', '
 
        // Set productToUpdate equal to product clicked on
        $rootScope.productToUpdate = product;
+       $state.go('updateproduct');
 
      };
 
