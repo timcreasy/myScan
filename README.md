@@ -34,3 +34,27 @@ var PrivateKey = "YOUR_PRIVATE_KEY";
 var PublicKey = "YOUR_PUBLIC_KEY";
 var AssociateTag = "YOUR_ASSOCIATE_TAG";
 ```
+#####myScan/config.xml
+Customize options for your project in config.xml, these include things such as application name, splash screen delay, version number, etc.
+###Run
+Because myScan is a barcode scanning utility, it should be run on mobile devices.  However, for testing purposes, you can serve your application (without scanning functionality) using:
+```bash
+$ cd path/to/myScan
+$ ionic serve
+```
+This repository has only included iOS as a platform, if you would like to add Android as a deployment target run the following command:
+```bash
+$ cd path/to/myScan
+$ ionic platform add android
+```
+To build and run for iOS (assuming Xcode installed with provisioning profile) run the following command
+```bash
+$ cd path/to/myScan
+$ ionic build ios
+```
+Upon successful build, navigate to myScan/platforms/ios/ and open myScan.xcodeproj.  Connect your device, select your provisioning profile, and Build & Run with your development device selected.
+###Relevant Links
+[How to run your Ionic app on real devices](http://www.neilberry.com/how-to-run-your-ionic-app-on-real-devices/)   
+[Getting Started with Ionic](http://ionicframework.com/getting-started/)   
+[Ionic FAQ](http://ionicframework.com/docs/ionic-cli-faq/)   
+[Amazon Product Advertising API](https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html)   
