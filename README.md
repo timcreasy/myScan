@@ -21,3 +21,16 @@ Login to [Firebase](https://www.firebase.com/login/ "Firebase") and create a new
 Along with your AWS account, it is necessary to register as an Amazon Associate, for any calls to the Amazon Product Advertising API.  You can register as an Amazon Associate [here](https://affiliate-program.amazon.com/).  After registering and login, take note of your Affiliate ID, which follows the format of xxxx-20.
 
 ###Project Configuration
+After signing up for all necessary services, you must include this information in your project as follows:
+#####myScan/www/services/firebaseReference.js
+On line 3, replace "YOUR_FIREBASE_REFERENCE" with the URL to your Firebase application:
+```javascript
+var firebaseReference = new Firebase("YOUR_FIREBASE_REFERENCE");
+```
+#####myScan/www/services/amazonService.js
+On lines 28-30, replace each of the placeholders with your relevant key/Associate ID:
+```javascript
+var PrivateKey = "YOUR_PRIVATE_KEY";
+var PublicKey = "YOUR_PUBLIC_KEY";
+var AssociateTag = "YOUR_ASSOCIATE_TAG";
+```
