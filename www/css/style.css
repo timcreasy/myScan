@@ -1,17 +1,41 @@
-/* Empty. Add your own CSS if you like */
-#scanButton {
-  display: block;
-  padding:10px;
-  text-decoration: none;
+.homeButton {
+  font-weight: 500;
+}
+
+#imageOutput {
+  margin-top: 17px;
   text-align: center;
 }
 
-#productsButton {
-  text-align: center;
+#scanButton {
+  width: 50%;
   display: block;
+  margin: auto;
+  margin-bottom: 20%;
   padding:10px;
   text-decoration: none;
 }
+
+#scanImage {
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+#listImage {
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+#productsButton {
+  width: 50%;
+  display: block;
+  margin: auto;
+  padding:10px;
+  text-decoration: none;
+}
+
 
 .center{
   display: -webkit-box;

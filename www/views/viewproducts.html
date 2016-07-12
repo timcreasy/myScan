@@ -1,0 +1,26 @@
+<ion-view view-title="Products">
+  <ion-nav-buttons side="left">
+        <a class="button icon-left ion-chevron-left button-clear button-dark homeButton" href="#/home">Home</a>
+        <!-- <button class="button icon-left ion-home">Home</button> -->
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-light bar-subheader">
+        <label class="item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search products" ng-model="queryInventory">
+        </label>
+    </ion-header-bar>
+  <ion-content>
+
+    <div class="list">
+      <div ng-repeat="product in inventory | filter: queryInventory" id="{{$id}}">
+        <div ng-click='productClicked(product)' class="item item-thumbnail-left">
+          <img src="{{product.image}}">
+          <h2>{{product.productName}}</h2>
+          <p>Quantity: {{product.quantity}}</p>
+          <p>Barcode: {{product.barcode}}</p>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
