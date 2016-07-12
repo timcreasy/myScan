@@ -13,11 +13,16 @@
   text-decoration: none;
 }
 
-#homeButton {
+.homeButton {
   font-weight: 500;
 }
 
-#scanButton {
+#imageOutput {
+  margin-top: 17px;
+  text-align: center;
+}
+
+/*#scanButton {
   width: 50%;
   display: block;
   margin: auto;
@@ -39,7 +44,7 @@
   width: 50%;
   display: block;
   margin: auto;
-}
+}*/
 
 
 .center{
