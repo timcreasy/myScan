@@ -1,8 +1,8 @@
-myScan.controller('ViewProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform', '$rootScope', '$state', 'productService',
-   function($scope,$firebaseArray,$ionicPlatform, $rootScope, $state, productService) {
+myScan.controller('ViewProductsCtrl', ['$scope','$firebaseArray','$ionicPlatform', '$rootScope', '$state', 'productService', 'firebaseReference',
+   function($scope,$firebaseArray,$ionicPlatform, $rootScope, $state, productService, firebaseReference) {
 
      // Get reference to Firebase inventory
-     var inventoryRef = new Firebase("https://myscan.firebaseio.com/inventory");
+     var inventoryRef = firebaseReference.child("inventory");
 
      $rootScope.productToUpdate = null;
 
